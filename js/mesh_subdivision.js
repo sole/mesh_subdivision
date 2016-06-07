@@ -49,7 +49,7 @@ function init() {
 	//http://code.google.com/p/chromium/issues/detail?id=82086
 	renderer = new THREE.WebGLRenderer({antialias: false, preserveDrawingBuffer: true});
 	renderer.setSize(canvas_w, canvas_h);
-	renderer.setClearColorHex(scene_properties.background_color, 1);
+	renderer.setClearColor(scene_properties.background_color, 1);
 
 	document.body.appendChild(renderer.domElement);
 
@@ -114,7 +114,7 @@ function init() {
 				geom = new THREE.Geometry();
 			for(var j = 0; j < ax.points.length; j++) {
 				var p = ax.points[j];
-				geom.vertices.push(new THREE.Vertex( new THREE.Vector3(p[0], p[1], p[2] )));
+				geom.vertices.push(new THREE.Vector3(p[0], p[1], p[2] ));
 			}
 			var mat = new THREE.LineBasicMaterial({color: ax.color, linewidth: 2 });
 			var ax_line = new THREE.Line(geom, mat);
@@ -138,7 +138,7 @@ function init() {
 		vertex_list = [];
 		vecs.forEach(function(v) {
 			var vec3 = new THREE.Vector3(v[0], v[1], v[2]).multiplyScalar(length/2);
-			vertex_list.push(new THREE.Vertex( vec3 ));
+			vertex_list.push(vec3);
 		});
 		
 		face_list.push( new THREE.Face3( 0, 1, 2) );
@@ -163,15 +163,15 @@ function init() {
 				v2 = face.b;
 				v3 = face.c;
 				
-				p1 = vertex_list[v1].position;
-				p2 = vertex_list[v2].position;
-				p3 = vertex_list[v3].position;
+				p1 = vertex_list[v1];
+				p2 = vertex_list[v2];
+				p3 = vertex_list[v3];
 				
-				p4 = new THREE.Vertex(new THREE.Vector3(
+				p4 = new THREE.Vector3(
 					(p1.x + p2.x + p3.x) / 3.0,
 					(p1.y + p2.y + p3.y) / 3.0,
 					(p1.z + p2.z + p3.z) / 3.0
-				));
+				);
 				
 				vertex_list.push(p4);
 				
@@ -194,7 +194,7 @@ function init() {
 		
 		for(var i = 0; i < vertex_list.length; i++) {
 			var v = vertex_list[i],
-				pos = v.position;
+				pos = v;
 
 			v.originalPosition = new THREE.Vector3(pos.x, pos.y, pos.z);
 		}
@@ -299,9 +299,9 @@ function init() {
 	}
 	
 	function setAxisVisible(value) {
-		THREE.SceneUtils.traverseHierarchy(axis, function(o) {
+		/*THREE.SceneUtils.traverseHierarchy(axis, function(o) {
 			o.visible = value;
-		});
+		});*/
 	}
 	
 	function animate() {
@@ -325,7 +325,7 @@ function init() {
 		if(scene_properties.wobbly) {
 			var speed = scene_properties.wobbly_speed;
 			for(var i = 0 ; i < vertices.length; i++) {
-				var v = vertices[i].position,
+				var v = vertices[i],
 					ov = vertices[i].originalPosition,
 					tt = (speed * t * 0.00005) + i;
 				
