@@ -300,9 +300,9 @@ function init() {
 	}
 	
 	function setAxisVisible(value) {
-		/*THREE.SceneUtils.traverseHierarchy(axis, function(o) {
+		axis.traverse(function(o) {
 			o.visible = value;
-		});*/
+		});
 	}
 	
 	function animate() {
