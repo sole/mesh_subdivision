@@ -50,6 +50,7 @@ function init() {
 	renderer = new THREE.WebGLRenderer({antialias: false, preserveDrawingBuffer: true});
 	renderer.setSize(canvas_w, canvas_h);
 	renderer.setClearColor(scene_properties.background_color, 1);
+	renderer.setPixelRatio(window.devicePixelRatio);
 
 	document.body.appendChild(renderer.domElement);
 
