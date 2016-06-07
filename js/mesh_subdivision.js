@@ -333,7 +333,7 @@ function init() {
 				v.y = ov.y + 25 * Math.cos(tt*0.5);
 				v.z = ov.z + 25 * (-Math.sin(v.x) );
 			}
-			geometry.__dirtyVertices = true; // UUUUUUUURRRRGGGHHH
+			geometry.verticesNeedUpdate = true;
 		}
 		
 		
