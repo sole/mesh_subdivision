@@ -1,0 +1,67 @@
+<html>
+	<head>
+		<meta charset="utf-8"> 
+		<title>mesh subdivision 2012 extended edition</title>
+		<script src="js/Detector.js"></script>
+		<script src="js/Three-r48.js"></script>
+		<script src="js/dat.gui.min.js"></script>
+		<script src="js/FileSaver.min.js"></script>
+		<script src="js/canvas-toBlob.min.js"></script>
+		<script src="js/mesh_subdivision.js"></script>
+		<script type="text/javascript">
+			var _gaq = _gaq || [];
+			_gaq.push(['_setAccount', 'UA-384699-1']);
+			_gaq.push(['_setDomainName', 'soledadpenades.com']);
+			_gaq.push(['_trackPageview']);
+		  (function() {
+		       var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		       ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		       var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s)				 })();
+		 </script>
+	</head>
+	<body>
+		<div id="md2012_main">
+			<h1><span>mesh subdivision</span> <span>(2012 extended edition)</span></h1>
+			<p><a href="http://soledadpenades.com/2012/04/16/mesh-subdivision-2012-extended-edition/">blog post</a>, <a href="http://twitter.com/supersole">@supersole</a>, <a href="http://soledadpenades.com">www</a>.</p>
+			<p id="libs"><span>using</span> <a href="https://github.com/mrdoob/three.js">three.js</a>, <a href="https://code.google.com/p/dat-gui/">dat.gui</a>, <a href="https://github.com/eligrey/FileSaver.js">FileSaver.js</a> <span>and</span> <a href="https://github.com/eligrey/canvas-toBlob.js">canvas-toBlob.js</a>.</p>
+		</div>
+		<style>
+			body {
+				padding: 0;
+				margin: 0;
+				font-family: Courier, "Courier new", monospace;
+			}
+
+			#md2012_main {
+				position: absolute;
+				left: 0;
+				top: 0;
+			}
+			
+			#md2012_main h1 {
+				font-weight: normal;
+				margin: 0;
+			}
+
+			#md2012_main h1, #md2012_main p {
+				color: #000;
+				text-shadow: 1px 1px 1px #fff;
+			}
+
+			#md2012_main a {
+				color: #00f;
+			}
+
+			#md2012_main p {
+				font-weight: bold;
+			}
+
+			#libs { font-size: 80%; font-style: italic; }
+
+			#md2012_main span, #md2012_main a {
+				background: rgba(255, 255, 255, 0.3);
+				padding: 3px;
+			}
+		</style>
+	</body>
+</html>
